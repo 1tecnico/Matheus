@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Futebol</title>
+</head>
+<body>
+    <h1>Futebol</h1>
+    <p>Futebol é um esporte jogado entre dois times de 11 jogadores. É o esporte mais popular do mundo.</p>
+
+    <h2>Times famosos</h2>
+    <ul>
+        <li>Flamengo</li>
+        <li>Palmeiras</li>
+        <li>Barcelona</li>
+        <li>Real Madrid</li>
+    </ul>
+
+    <h2>Imagem de uma bola de futebol</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Soccerball.svg" alt="Bola de futebol" width="200">
+</body>
+</html>
