@@ -133,5 +133,115 @@
     gap: 40px; /* espaço entre os elementos */
   }
 </style>
-</html>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Futebol</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
 
+    .conteudo-esquerda {
+      text-align: left;
+      margin-left: 0;
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    img {
+      width: 150px;
+    }
+
+    .calculadora {
+      margin-top: 20px;
+    }
+
+    .teclado button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .resultado {
+      margin-top: 10px;
+      font-size: 20px;
+      background-color: #ddd;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="conteudo-esquerda">
+    <ul>
+      <li>Flamengo</li>
+      <li>Palmeiras</li>
+      <li>Barcelona</li>
+      <li>Real Madrid</li>
+    </ul>
+
+    <h3>Imagem de uma bola de futebol</h3>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Soccerball.svg" alt="Bola de futebol">
+    <p><a href="https://upload.wikimedia.org/wikipedia/commons/3/3f/Soccerball.svg" download>CLIQUE AQUI PARA BAIXAR</a></p>
+
+    <div class="calculadora">
+      <input type="text" id="display" readonly>
+
+      <div class="teclado">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>/</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+        <button>0</button>
+        <button>.</button>
+        <button>=</button>
+        <button>+</button>
+        <button onclick="limpar()">C</button>
+      </div>
+
+      <div class="resultado" id="resultado">C</div>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    const resultado = document.getElementById('resultado');
+    const botoes = document.querySelectorAll('.teclado button');
+
+    botoes.forEach(botao => {
+      botao.addEventListener('click', () => {
+        const valor = botao.textContent;
+        if (valor === '=') {
+          try {
+            display.value = eval(display.value);
+            resultado.textContent = display.value;
+          } catch {
+            resultado.textContent = 'Erro';
+          }
+        } else if (valor !== 'C') {
+          display.value += valor;
+        }
+      });
+    });
+
+    function limpar() {
+      display.value = '';
+      resultado.textContent = 'C';
+    }
+  </script>
+</body>
+</html>
